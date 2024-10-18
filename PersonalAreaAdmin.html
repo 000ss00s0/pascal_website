@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ Панель</title>
+    <link rel="stylesheet" href="PersonalAreaAdmin.css">
+</head>
+<body>
+    <div class="header">
+        <button onclick="window.location.href = 'general.php';">Главная</button>
+        <button onclick="window.location.href = 'courses.php';">Курсы</button>
+        <button onclick="window.location.href = 'tests.php';">Тесты</button>
+        <button onclick="window.location.href = 'personal_area.php';">Личный кабинет</button>  
+    </div>
+
+    <div class="container">
+        <h1>Управление пользователями</h1>
+        <table>
+            <!-- <thead>
+                <tr>
+                    <th>Имя пользователя</th>
+                    <th>Email</th>
+                    <th>Роль</th>
+                    <th>Действия</th>
+                </tr>
+            </thead> -->
+            <tbody id="user-list">
+                <!-- PHP будет вставлять данные здесь -->
+            </tbody>
+        </table>
+    </div>
+    <!-- <form id="PersonalArea" action="logout.php" method="post">
+        <button type="submit" class="logoutButton">Выйти из аккаунта</button>
+    </form>     -->
+    <script>
+        function performAction(action, username) {
+            if (confirm(`Вы уверены, что хотите выполнить действие: ${action} для пользователя ${username}?`)) {
+                const formData = new FormData();
+                formData.append('action', action);
+                formData.append('username', username);
+
+                fetch('PersonalAreaAdmin.php', { // Укажите здесь ваш PHP-файл
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    if (data === 'success') {
+                        alert(`Действие '${action}' успешно выполнено для пользователя ${username}.`);
+                        location.reload(); // Перезагрузка страницы для обновления данных
+                    } else {
+                        alert(`Ошибка при выполнении действия '${action}' для пользователя ${username}.`);
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                });
+            }
+        }
+        //     // Функции для управления пользователями
+
+        // function deleteUser(button) {
+        //     const row = button.parentNode.parentNode;
+        //     const username = row.cells[0].textContent;
+
+        //     if (confirm(`Вы уверены, что хотите удалить пользователя ${username}?`)) {
+        //         // Здесь вы можете добавить AJAX-запрос для удаления пользователя на сервере
+        //         row.remove(); // Удаляем строку из таблицы
+        //         alert(`Пользователь ${username} удалён.`);
+        //     }
+        // }
+
+        // function blockUser(button) {
+        //     const row = button.parentNode.parentNode;
+        //     const username = row.cells[0].textContent;
+
+        //     if (confirm(`Вы уверены, что хотите заблокировать пользователя ${username}?`)) {
+        //         // Добавьте запрос на сервер для блокировки пользователя
+        //         alert(`Пользователь ${username} заблокирован.`);
+        //     }
+        // }
+
+        // function resetPassword(button) {
+        //     const row = button.parentNode.parentNode;
+        //     const username = row.cells[0].textContent;
+
+        //     if (confirm(`Вы уверены, что хотите сбросить пароль пользователя ${username}?`)) {
+        //         // Добавьте запрос на сервер для сброса пароля
+        //         alert(`Пароль для пользователя ${username} сброшен.`);
+        //     }
+        // }
+
+        // function assignAdmin(button) {
+        //     const row = button.parentNode.parentNode;
+        //     const username = row.cells[0].textContent;
+
+        //     if (confirm(`Вы уверены, что хотите назначить пользователя ${username} администратором?`)) {
+        //         // Добавьте запрос на сервер для назначения роли администратора
+        //         row.cells[2].textContent = 'admin'; // Меняем роль в таблице
+        //         alert(`Пользователь ${username} теперь администратор.`);
+        //     }
+        // }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif; /* Устанавливает шрифт для всего документа */
+    background-color: #f0f0f0; /* Устанавливает цвет фона */
+    margin: 0; /* Убирает внешние отступы */
+    padding: 0; /* Убирает внутренние отступы */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+.header {
+    background-color: #007bff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.header button:hover {
+    transform: scale(1.1);
+}
+
+.question {
+    margin-top: 20px;
+}
+
+.check-results-button {
+    margin-top: 20px;
+    padding: 15px 30px; /* Увеличиваем размер кнопки */
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.check-results-button:hover {
+    transform: scale(1.1);
+}
+
+form {
+    max-width: 980px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирует контейнер по горизонтали */
+    background-color: #fff; /* Цвет фона контейнера */
+    padding: 20px; /* Внутренний отступ контейнера */
+    border-radius: 10px; /* Скругление углов контейнера */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень контейнера */
+    text-align: center;
+}
+
+.question-menu {
+    display: flex; /* Размещаем элементы в строку */
+    justify-content: space-between; /* Распределяем пространство между элементами */
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: fit-content; /* Ширина контейнера равна его содержимому */
+    margin: 0 auto; /* Горизонтальное выравнивание по центру */
+}
+
+.question-menu .question-menu-item {
+    margin-right: 10px;
+}
+
+.question-menu .question-menu-item:last-child {
+    margin-right: 0; /* Убираем отступ у последнего элемента */
+}
+
+.question-menu .question-menu-item a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.question-menu .question-menu-item a:hover {
+    background-color: #ddd;
+}
+
+.nextQuestionButton,
+.checkAnswersButton {
+    margin-top: 10px;
+    margin-bottom : 10px; /* Добавляем отступ снизу */
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+.nextQuestionButton:hover,
+.checkAnswersButton:hover {
+    transform: scale(1.1);
+    background-color: #0056b3; /* Немного темнее при наведении */
+}
+
+.nextQuestionButton {
+    margin-right: 10px;
+}
+
+.checkAnswersButton {
+    margin-left: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.incorrect {
+    color: red;
+}
+

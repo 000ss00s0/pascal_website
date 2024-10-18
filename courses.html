@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсы</title>
+    <link rel="stylesheet" href="courses_style.css">
+</head>
+<body>
+    <div class="header">
+        <button onclick="window.location.href = 'general.php';">Главная</button>
+        <button onclick="window.location.href = 'courses.php';">Курсы</button>
+        <button onclick="window.location.href = 'tests.php';">Тесты</button>
+        <button onclick="window.location.href = 'personal_area.php';">Личный кабинет</button>  
+    </div>
+
+    <div class="courses">
+        <div class="course" id="course1" onclick="redirectToCoursePage(1)">
+            <h4>Паскаль</h4>
+        </div>
+        <div class="course" id="course2" onclick="redirectToCoursePage(2)">
+            <h4>Организация ввода и вывода данных</h4>
+        </div>
+        <div class="course" id="course3" onclick="redirectToCoursePage(3)">
+            <h4>Программирование линейных алгоритмов</h4>
+        </div>
+        <div class="course" id="course4" onclick="redirectToCoursePage(4)">
+            <h4>Одномерные массивы целых чисел</h4>
+        </div>
+        <div class="course" id="course5" onclick="redirectToCoursePage(5)">
+            <h4>Конструирование алгоритмов</h4>
+        </div>
+    </div>
+
+    <script>
+        // Функция для перенаправления на страницу курса
+        function redirectToCoursePage(courseNumber) {
+            // В зависимости от номера курса выполняем перенаправление на соответствующую страницу
+            window.location.href = 'course' + courseNumber + '.html';
+        }
+        // Получаем все курсы
+        const courses = document.querySelectorAll('.course');
+    </script>
+</body>
+</html>

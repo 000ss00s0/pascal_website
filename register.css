@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Цвет фона страницы */
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+form {
+    margin: 0 auto;
+    max-width: 300px;
+    background-color: #f5f5f5; /* Добавляем белый фон для формы */
+    padding: 20px; /* Добавляем внутренний отступ для формы */
+    border-radius: 8px; /* Скругляем углы формы */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Добавляем тень форме */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ced4da; /* Изменяем цвет рамки на серый */
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px; /* Увеличиваем внутренние отступы кнопки */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Добавляем плавный переход */
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Изменяем цвет кнопки при наведении */
+}
+
+button {
+    margin-top: 10px;
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+}
+
+button:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    position: fixed;
+    top: -100px; /* Спрятать сообщение за пределами видимой области */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #dc3545;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    transition: top 0.5s ease; /* Анимация движения сверху вниз */
+}
+
+.error-message.show {
+    top: 55px; /* Позиция сверху после анимации */
+}
+
+.header {
+    background-color: #007bff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.header button:hover {
+    transform: scale(1.1);
+}
+
+/* CSS код для кнопок выбора роли */
+.radio-label {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.radio-label input[type="radio"] {
+    display: none; /* Скрыть радио кнопки */
+}
+
+.radio-label label {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.radio-label input[type="radio"]:checked + label {
+    background-color: #0056b3; /* Изменяем цвет кнопки при выборе */
+}
+
+/* Кнопки "Ученик" и "Преподаватель" */
+#student + label {
+    margin-right: 10px;
+}
+
+#teacher + label {
+    margin-right: 20px; /* Добавляем большее расстояние после кнопки "Преподаватель" */
+}
+
+/* Кнопка "Зарегистрироваться" */
+input[type="submit"] {
+    margin-top: 10px; /* Добавляем отступ сверху */
+}

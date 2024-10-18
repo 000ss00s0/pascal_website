@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Цвет фона страницы */
+}
+
+.header {
+    background-color: #007bff;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.header button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.header button:hover {
+    transform: scale(1.1);
+}
+
+.course-title {
+    text-align: center;
+    margin-top: 80px; /* Увеличиваем отступ сверху */
+}
+
+.course-title h1 {
+    font-size: 24px; /* Размер шрифта "Курс 1" */
+    color: #007bff; /* Цвет текста "Курс 1" */
+}
+
+h3 {
+    color: #007bff; /* Цвет текста для h3 */
+    font-size: 1.5em; /* Размер шрифта для h3 */
+    font-weight: bold; /* Жирный текст для h3 */
+    margin-bottom: 10px; /* Отступ снизу для h3 */
+}
+
+h4 {
+    color: #007bff; /* Цвет текста для h4 */
+    font-size: 1.2em; /* Размер шрифта для h4 */
+    font-weight: bold; /* Жирный текст для h4 */
+    margin-bottom: 8px; /* Отступ снизу для h4 */
+}
+
+.content {
+    max-width: 980px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирует контейнер по горизонтали */
+    background-color: #fff; /* Цвет фона контейнера */
+    padding: 20px; /* Внутренний отступ контейнера */
+    border-radius: 10px; /* Скругление углов контейнера */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень контейнера */
+    text-align: justify;
+}
+
+.content p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    text-align: left; /* Изменено на text-align: left; */
+}
+
+.important-definition {
+    background-color: #e6f2ff; /* Измененный цвет фона выделенного блока */
+    border: 2px solid #007bff; /* Цвет рамки выделенного блока */
+    padding: 10px; /* Отступ внутри блока */
+    margin-top: 20px; /* Отступ сверху */
+    transition: transform 0.2s ease; /* Добавляем анимацию для свойства transform */
+}
+
+.important-definition:hover {
+    transform: scale(1.05); /* Увеличиваем размер блока при наведении */
+}
+
+.important-definition p {
+    /*font-weight: bold; /* Полужирный текст */
+    color: #333; /* Цвет текста */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+.list {
+    counter-reset: item;
+    margin-left: 20px;
+}
+.list > div {
+    margin-bottom: 10px;
+}
+.list > div::before {
+    counter-increment: item;
+    content: counter(item) ") ";
+    font-weight: bold;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.code {
+    background-color: #1e1f29;
+    border-radius: 5px;
+    padding: 20px;
+}
+.keyword {
+    color: #569cd6;
+    background-color: transparent; /* Задаем прозрачный фон */
+}
+.constant {
+    color: #b5cea8;
+    background-color: transparent; /* Задаем прозрачный фон */
+}
+.variable {
+    color: #dcdcaa;
+    background-color: transparent; /* Задаем прозрачный фон */
+}
+.operator {
+    color: #d4d4d4;
+    background-color: transparent; /* Задаем прозрачный фон */
+}
+
+.output {
+    background-color: #1e1f29;
+    border-radius: 5px;
+    padding: 20px;
+    color: #d4d4d4; /* Цвет текста */
+}
+
+.result-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.input-prompt {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.calculation-results div {
+    margin-bottom: 5px;
+    display: inline-block;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Программирование линейных алгоритмов</title>
+    <link rel="stylesheet" href="course3_style.css">
+</head>
+<body>
+    <!-- Заголовок страницы -->
+    <div class="header">
+        <button onclick="window.location.href = 'general.php';">Главная</button>
+        <button onclick="window.location.href = 'courses.php';">Курсы</button>
+        <button onclick="window.location.href = 'tests.php';">Тесты</button>
+        <button onclick="window.location.href = 'personal_area.php';">Личный кабинет</button>    
+    </div>
+
+    <!-- Заголовок "Курс 3" -->
+    <div class="course-title">
+        <h1>Программирование линейных алгоритмов</h1>
+    </div>
+
+    <!-- Содержимое страницы -->
+    <div class="content">
+        <!-- Параграфы с текстом -->
+        <p>Программы, реализующие линейные алгоритмы, являются простейшими. Все имеющиеся в них операторы выполняются последовательно, один за другим.</p>
+        <p>Программируя линейные алгоритмы, рассмотрим более подробно целочисленные, логические, символьные и строковые типы данных.</p        </p>
+        <h3>Числовые типы данных</h3>
+        <table>
+          <tr>
+              <th>Функция</th>
+              <th>Назначение</th>
+              <th>Тип аргумента</th>
+              <th>Тип результата</th>
+          </tr>
+          <tr>
+              <td>abs (x)</td>
+              <td>Модуль x</td>
+              <td>integer, eal</td>
+              <td>Такой же, как у аргумента</td>
+          </tr>
+          <tr>
+              <td>sqr (x)</td>
+              <td>Квадрат x</td>
+              <td>integer, real</td>
+              <td>Такой же, как у аргумента</td>
+          </tr>
+          <tr>
+              <td>sqrt (x)</td>
+              <td>Квадратный корень из x</td>
+              <td>integer, real</td>
+              <td>real</td>
+          </tr>
+          <tr>
+              <td>round (x)</td>
+              <td>Округление x до ближайшего целого</td>
+              <td>real</td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>int (x)</td>
+              <td>Целая часть x</td>
+              <td>real</td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>frac (x)</td>
+              <td>Дробная часть x</td>
+              <td>real</td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>random</td>
+              <td>Случайное число от 0 до 1</td>
+              <td>—</td>
+              <td>real</td>
+          </tr>
+          <tr>
+              <td>random (x)</td>
+              <td>Случайное число от 0 до x</td>
+              <td>integer</td>
+              <td>integer</td>
+          </tr>
+      </table>
+        <!-- <p>Исследуем работу функций round, int и frac, применив их к некоторому вещественному х. Соответствующая программа будет иметь вид:</p>
+        <div class="code">
+          <span class="keyword">program</span> <span class="variable">n_3;</span><br>
+          <span class="keyword">var</span> <span class="variable">x</span><span class="operator">:</span><span class="variable">real;</span><br>
+          <span class="keyword">begin</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">writeln</span> <span class="constant">(</span><span class="constant">'Исследование функций round, int, frac'</span><span class="constant">);</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">write</span> <span class="constant">(</span><span class="constant">'Введите x>>'</span><span class="constant">);</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">readln</span> <span class="constant">(</span><span class="variable">x</span><span class="constant">);</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">writeln</span> <span class="constant">(</span><span class="constant">'Округление'</span><span class="operator">,</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">writeln</span> <span class="constant">(</span><span class="constant">'Целая часть -'</span><span class="operator">,</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">writeln</span> <span class="constant">(</span><span class="constant">'Дробная часть -'</span><span class="operator">,</span><br>
+          <span class="keyword">end.</span>
+      </div>           -->
+      <h3>Целочисленный тип данных</h3>
+        <p>Над целыми числами в языке Паскаль выполняются следующие операции:</p>
+        <ul>
+          <li>сложение (+),</li>
+          <li>вычитание (-),</li>
+          <li>умножение (*),</li>
+          <li>получение целого частного (div),</li>
+          <li>получение целого остатка деления (mod), деление (/).</li>
+        </ul>
+        <p>Результаты первых пяти операций - целые числа. Результатом операции деления может быть вещественное число. Рассмотрим пример использования операций div и mod, записав на языке Паскаль программу нахождения суммы цифр вводимого с клавиатуры натурального трехзначного числа.</p>
+        <h3>Символьный и строковый типы данных</h3>
+        <p>Значением символьной величины (тип char) в языке Паскаль является любой из символов, который можно получить на экране нажатием на клавиатуре одной из клавиш или комбинации клавиш, а также некоторых других символов, в том числе и невидимых. Множество таких символов состоит из 256 элементов, каждому из которых согласно используемой кодовой таблице поставлен в соответствие код — число 0 до 255.</p>
+
+<p>Символы, соответствующие первым 32 кодам, являются управляющими, а остальные - изображаемыми.</p>
+
+<p>К изображаемым символам относится и пробел, имеющий код 32.</p>
+
+<p>Знакам препинания, знакам арифметических операций, цифрам, прописным и строчным латинским буквам соответствуют коды от 33 до 127.</p>
+
+<p>Буквам национального алфавита соответствуют коды с номерами 128 и далее.</p>
+
+<p>В тексте программы константу символьного типа можно задать, заключив любой изображаемый символ в апострофы: '5', 'в', '*'.</p>
+
+<p>Если значение символьной переменной считывается с клавиатуры, то его следует набирать без апострофов.</p>
+
+<p>Чтобы найти код символа, используют функцию ord, где в качестве параметра задают символ.</p>
+
+<p>Чтобы по коду узнать символ, используют функцию chr, где в качестве параметра указывают код символа.</p>
+
+<p>Значением строковой величины (тип string) является произвольная последовательность символов, заключенная в апострофы.</p> 
+
+<p>В Паскале (как и в алгоритмическом языке) строки можно сцеплять.</p>
+
+<h3>Логический тип данных</h3>
+
+<p>Как известно, величины логического типа принимают всего два значения; в Паскале это false и true. Эти константы определены так, что false < true.</p>
+
+<p>Логические значения получаются в результате выполнения операций сравнения числовых, символьных, строковых и логических выражений. Поэтому в Паскале логической переменной можно присваивать результат операции сравнения.</p>
+
+<div class="important-definition">
+  <p>В языке Паскаль используются вещественный, целочисленный, символьный, строковый, логический и другие типы данных. Для них определены соответствующие операции и функции.</p>
+</div>

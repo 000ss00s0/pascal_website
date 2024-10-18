@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Цвет фона страницы */
+}
+
+.header {
+    background-color: #007bff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.header button:hover {
+    transform: scale(1.1);
+}
+
+.courses {
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.course {
+    cursor: pointer;
+}
+
+.course {
+    display: inline-block;
+    width: 150px;
+    height: 100px;
+    margin: 10px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.course:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.logoutButton {
+    margin-top: 10px;
+    margin-bottom: 10px; /* Добавляем отступ снизу */
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: inline-block;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.logoutButton:hover {
+    transform: scale(1.1);
+    background-color: #0056b3; /* Немного темнее при наведении */
+}
+
+.logoutButton {
+    margin: 20px auto 10px; /* Добавляем отступ сверху, автоматичесный отступ слева и справа, и отступ снизу */
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    display: block;
+    border-radius: 5px;
+    text-decoration: none;
+}

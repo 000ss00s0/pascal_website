@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="personal_area.css">
+</head>
+<body>
+    <div class="header">
+        <button onclick="window.location.href = 'general.php';">Главная</button>
+        <button onclick="window.location.href = 'courses.php';">Курсы</button>
+        <button onclick="window.location.href = 'tests.php';">Тесты</button>
+        <button onclick="window.location.href = 'personal_area.php';">Личный кабинет</button>  
+    </div>
+
+    <form id="PersonalArea" action="logout.php" method="post">
+        <button type="submit" class="logoutButton">Выйти из аккаунта</button>
+    </form>    
+</body>
+</html>

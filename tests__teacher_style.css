@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Цвет фона страницы */
+}
+
+.header {
+    background-color: #007bff;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.header button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.header button:hover {
+    transform: scale(1.1);
+}
+
+.content {
+    max-width: 980px; /* Максимальная ширина контейнера */
+    margin: 80px auto 0; /* Установите отступ сверху 80px и автоматически центрируйте контейнер по горизонтали */
+    background-color: #fff; /* Цвет фона контейнера */
+    padding: 20px; /* Внутренний отступ контейнера */
+    border-radius: 10px; /* Скругление углов контейнера */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень контейнера */
+    text-align: justify;
+}
+
+
+.content p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.important-definition {
+    background-color: #e6f2ff; /* Измененный цвет фона выделенного блока */
+    border: 2px solid #007bff; /* Цвет рамки выделенного блока */
+    padding: 10px; /* Отступ внутри блока */
+    margin-top: 20px; /* Отступ сверху */
+    transition: transform 0.2s ease; /* Добавляем анимацию для свойства transform */
+}
+
+.important-definition:hover {
+    transform: scale(1.05); /* Увеличиваем размер блока при наведении */
+}
+
+.important-definition p {
+    font-weight: bold; /* Полужирный текст */
+    color: #333; /* Цвет текста */
+}
+
+

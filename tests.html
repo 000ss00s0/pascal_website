@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тесты</title>
+    <link rel="stylesheet" href="tests_style.css">
+</head>
+<body>
+    <div class="header">
+        <button onclick="window.location.href = 'general.php';">Главная</button>
+        <button onclick="window.location.href = 'courses.php';">Курсы</button>
+        <button onclick="window.location.href = 'tests.php';">Тесты</button>
+        <button onclick="window.location.href = 'personal_area.php';">Личный кабинет</button>  
+    </div>
+
+    <div class="tests">
+        <div class="test" id="test1" onclick="redirectToTestPage(1)">
+            <h4>Паскаль</h4>
+        </div>
+        <div class="test" id="test2" onclick="redirectToTestPage(2)">
+            <h4>Организация ввода и вывода данных</h4>
+        </div>
+        <div class="test" id="test3" onclick="redirectToTestPage(3)">
+            <h4>Программирование линейных алгоритмов</h4>
+        </div>
+        <div class="test" id="test4" onclick="redirectToTestPage(4)">
+            <h4>Одномерные массивы целых чисел</h4>
+        </div>
+        <div class="test" id="test5" onclick="redirectToTestPage(5)">
+            <h4>Конструирование алгоритмов</h4>
+        </div>
+    </div>
+
+    <div class="main_test_block">
+        <div class="test" id="main_test" onclick="window.location.href = 'main_test.php';">
+            <h4>Итоговое тестирование</h4>
+        </div>
+    </div>
+
+    <script>
+        // Функция для перенаправления на страницу теста
+        function redirectToTestPage(testNumber) {
+            // В зависимости от номера теста выполняем перенаправление на соответствующую страницу
+            window.location.href = 'test' + testNumber + '.html';
+        }
+        // Получаем все тесты
+        const tests = document.querySelectorAll('.test');
+    </script>
+</body>
+</html>

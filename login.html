@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+    <div class="header">
+        <button onclick="window.location.href = 'general.php';">Главная</button>
+        <button onclick="window.location.href = 'courses.php';">Курсы</button>
+        <button onclick="window.location.href = 'tests.php';">Тесты</button>
+        <button onclick="window.location.href = 'personal_area.php';">Личный кабинет</button>  
+    </div>
+    <h2>Форма авторизации</h2>
+    <form id="loginForm" onsubmit="event.preventDefault(); loginUser();">
+        Имя пользователя или email: <input type="text" name="username"><br>
+        Пароль: <input type="password" name="password"><br>
+        <input type="submit" value="Авторизоваться">
+    </form>
+    <div id="errorMessage" class="error-message"></div>
+    <script>
+        function validateLoginForm() {
+            var username = document.getElementsByName('username')[0].value;
+            var password = document.getElementsByName('password')[0].value;
+            if (!username || !password) {
+                showError("Эй, дружище! Нам нужны данные, чтобы продолжить. Без них наши серверы чувствуют себя как рыба без воды - немного потерянными!");
+                return false;
+            }
+            return true;
+        }
+
+        function showError(message) {
+            var errorMessage = document.getElementById('errorMessage');
+            errorMessage.textContent = message;
+            errorMessage.classList.add('show'); // Добавление класса для показа сообщения
+            setTimeout(function() {
+                errorMessage.classList.remove('show'); // Удаление класса после завершения анимации
+            }, 5000);
+        }
+
+        // Функция для отправки AJAX запроса
+        function loginUser() {
+            var xhr = new XMLHttpRequest();
+            var formData = new FormData(document.getElementById("loginForm"));
+            
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        // Получаем ответ от сервера
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.error) {
+                            // Если есть ошибка, вызываем функцию showError()
+                            showError(response.error);
+                        } else {
+                            // Если ошибки нет, перенаправляем пользователя
+                            window.location.href = "personal_area.php";
+                        }
+                    }
+                }
+            };
+
+            // Отправляем запрос методом POST на файл login.php
+            xhr.open("POST", "login.php", true);
+            xhr.send(formData);
+        }
+    </script>
+</body>
+</html>

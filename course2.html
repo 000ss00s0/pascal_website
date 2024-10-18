@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Организация ввода и вывода данных</title>
+    <link rel="stylesheet" href="course2_style.css">
+</head>
+<body>
+    <!-- Заголовок страницы -->
+    <div class="header">
+        <button onclick="window.location.href = 'general.php';">Главная</button>
+        <button onclick="window.location.href = 'courses.php';">Курсы</button>
+        <button onclick="window.location.href = 'tests.php';">Тесты</button>
+        <button onclick="window.location.href = 'personal_area.php';">Личный кабинет</button>    
+    </div>
+
+    <!-- Заголовок "Курс 2" -->
+    <div class="course-title">
+        <h1>Организация ввода и вывода данных</h1>
+    </div>
+
+    <!-- Содержимое страницы -->
+    <div class="content">
+        <!-- Параграфы с текстом -->
+        <p>В предыдущем курсе мы познакомились со структурой программы на языке Паскаль, научились описывать данные, рассмотрели оператор присваивания. Этого достаточно для того, чтобы записать программу преобразования данных. Но как же вывести результат этих преобразований?</p>
+        <h3>Вывод данных</h3>
+        <p>Для вывода данных из оперативной памяти на экран монитора используется оператор вывода write:</p>
+        <p>write (<выражение 1>,  <выражение 2>, …, <выражение N>)</p>
+        <p>Здесь в круглых скобках помещается список вывода — список выражений, значения которых выводятся на экран. Это могут быть числовые, символьные и логические выражения, в том числе переменные и константы.</p>
+        <p>Произвольный набор символов, заключённый в апострофы, считается строковой константой. Строковая константа может содержать любые символы, набираемые на клавиатуре.</p>
+        <p>Пример. выполняется так:</p>
+        <div class="list">
+            <div>на экран выводятся символы, заключённые в апострофы: s=</div>
+            <div>на экран выводится значение переменной, хранящееся в ячейке оперативной памяти с именем 8.</div>
+        </div>
+        <p>Если значение переменной s равно 15 и она имеет целочисленный тип, то на экране появится: s=15</p>
+        <p>Если значение переменной s равно 15, но она имеет вещественный тип, то на экране появится: .5E+01</p>
+        <p>При выполнении оператора вывода все элементы списка вывода печатаются непосредственно друг за другом. Так, в результате работы оператора write (1, 20, 300) на экран будет выведена последовательность цифр 120300, которая будет восприниматься нами как число 120300, а не как три отдельные числовые константы.</p>
+        <table>
+            <thead>
+              <tr>
+                <th>Вариант организации вывода</th>
+                <th>Оператор вывода</th>
+                <th>Результат</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Добавить разделители — запятые</td>
+                <td>write (1, ',', 20, ',', 300)</td>
+                <td>1, 20, 300</td>
+              </tr>
+              <tr>
+                <td>Добавить разделители — пробелы</td>
+                <td>write (1, ' ', 20, ' ', 300)</td>
+                <td>1&nbsp;20&nbsp;300</td>
+              </tr>
+              <tr>
+                <td>Указать формат вывода</td>
+                <td>write (1:3, 20:4, 300:5)</td>
+                <td>&nbsp;&nbsp;&nbsp;1&nbsp;20&nbsp;300</td>
+              </tr>                   
+            </tbody>
+          </table>
+          
+        <p><strong>Формат вывода</strong> — это указываемое после двоеточия целое число, определяющее, сколько позиций на экране должна занимать выводимая величина. Если цифр в числе меньше, чем зарезервированных под него позиций на экране, то свободные позиции дополняются пробелами слева от числа. Если указанное в формате вывода после двоеточия число меньше, чем необходимо, то оно автоматически будет увеличено до минимально необходимого.</p>
+        <p>Для вывода вещественного числа в формате с фиксированной запятой в списке вывода для каждого выражения указываются два параметра:</p>
+        <div class="list">
+            <div>общее количество позиций, отводимых под число;</div>
+            <div>количество позиций в дробной части числа.</div>
+        </div>
+        <table>
+            <tr>
+              <th>Оператор вывода</th>
+              <th>Результат выполнения оператора</th>
+            </tr>
+            <tr>
+              <td>write ( 's=', s:2:0);</td>
+              <td>S=15</td>
+            </tr>
+            <tr>
+              <td>write ( 's=', s:3:1);</td>
+              <td>S=   15.0</td>
+            </tr>
+            <tr>
+              <td>write ( 's=', s:5:1);</td>
+              <td>S=&nbsp;&nbsp;&nbsp;15.0</td>
+            </tr>
+          </table>          
+        <p>При выполнение нового оператора write вывод продолжается в той же строке. Чтобы осуществить переход к новой строке, используется оператор writeln. Других различий между операторами write и writeln нет.</p>
+        <h3>Первая программа на языке Паскаль</h3>
+        <p>Пользуясь рассмотренными операторами, составим программу, вычисляющую длину окружности и площадь круга радиуса 5,4 см.</p>
+        <p>Исходным данным в этой задаче является радиус: r — 5,4 см. Результатом работы программы должны быть величины с — длина окружности и s — площадь круга. с, s и r — величины вещественного типа.</p>
+        <p>Исходные данные и результаты связаны соотношениями, известными из курса математики: с = 2Пиr, s = Пиr^2Программа, реализующая вычисления по этим формулам, будет иметь вид:</p>
+        <div class="code">
+            <span class="keyword">program</span> <span class="variable">n_1;</span><br>
+            <span class="keyword">const</span> <span class="constant">pi</span><span class="constant">=</span><span class="constant">3.14;</span><br>
+            <span class="keyword">var</span> <span class="variable">r, c, s</span><span class="constant"> : </span><span class="constant">real;</span><br>
+            <span class="keyword">begin</span> <span class="operator">&lt;начало программного блока;&gt;</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">r</span>:=<span class="constant">5.4;</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">c</span>:=<span class="constant">2*pi*r;</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">s</span>:=<span class="constant">pi*r*r;</span><br>
+            <span class="keyword">writeln</span> <span class="constant">('с=',</span><span class="variable">c:</span><span class="constant">6:4;</span>)<br>
+            <span class="keyword">writeln</span> <span class="constant">('s=',</span><span class="variable">s:</span><span class="constant">6:4;</span>)<br>
+            <span class="keyword">end.</span>
+        </div>              
+        <p>Эта программа верна и решает поставленную задачу. Запустив её на выполнение, вы получите следующий результат:</p>
+        <p>c=33.9120</p>
+        <p>s=91.5624</p>
+        <p>И всё-таки составленная нами программа имеет существенный недостаток: она находит длину окружности и площадь круга для единственного значения радиуса (5,4 см).</p>
+        <p>Для того чтобы вычислить длину окружности и площадь круга для другого значения радиуса, потребуется вносить изменения непосредственно в текст программы, а именно изменять оператор присваивания. Внесение изменений в существующую программу, по меньшей мере, не всегда удобно (например, когда программа большая и операторов присваивания много). Ниже вы познакомитесь с оператором, позволяющим вводить исходные данные в процессе работы программы, не прибегая к изменению текста программы.</p>
+        <h3>Ввод данных с клавиатуры</h3>
+        <p>Для ввода в оперативную память значений переменных используется оператор ввода read:</p>
+        <p>read (<имя переменной 1>, <имя переменной 2>, …, <имя переменной N>)</p>
+        <p>При выполнении оператора read компьютер переходит в режим ожидания данных: пользователь должен ввести данные с клавиатуры и нажать клавишу Enter. Несколько значений переменных числовых типов могут вводиться через пробел или через запятую. При вводе символьных переменных пробел и запятая воспринимаются как символы, поэтому ставить их нельзя.</p>
+        <p>Первое введённое пользователем значение переменной помещается в ячейку памяти, имя которой расположено первым в списке ввода, и т. д. Поэтому типы вводимых значений (входного потока) должны соответствовать типам переменных, указанных в разделе описания переменных.</p>
+        <p>Для ввода данных с клавиатуры можно также использовать оператор readln. Отличие состоит в том, что после выполнения readln осуществляется автоматический переход на новую строку входного потока, даже если в текущей строке остались не введённые символы. Таким образом, readln позволяет считать лишь начальную часть введённой пользователем строки n, проигнорировав её окончание, перейти к следующей строке.</p>
+        <h4>Вернемся к нашей программе</h4>
+        <p>Усовершенствуем программу n_1, организовав в ней ввод данных с помощью оператора read. А чтобы пользователь знал, для чего предназначена программа, и понимал, какое именно действие ожидает от него компьютер, выведем соответствующие текстовые сообщения с помощью оператора writeln:</p>
+        <div class="code">
+            <span class="keyword">program</span> <span class="variable">n_2;</span><br>
+            <span class="keyword">const</span> <span class="constant">pi</span><span class="operator">=</span><span class="constant">3.14;</span><br>
+            <span class="keyword">var</span> <span class="variable">r, c, s</span><span class="operator">:</span><span class="variable">real;</span><br>
+            <span class="keyword">begin</span> <span class="operator">&lt;начало программного блока;&gt;</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">writeln</span> <span class="constant">(</span><span class="constant">' Вычисление длины окружности и площади круга '</span><span class="constant">);</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">write</span> <span class="constant">(</span><span class="constant">' Введите r>>'</span><span class="constant">);</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">readln</span> <span class="constant">(</span><span class="variable">r</span><span class="constant">);</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">c</span><span class="operator">:=</span><span class="constant">2*pi*r;</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="variable">s</span><span class="operator">:=</span><span class="constant">pi*r*r;</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">writeln</span> <span class="constant">(</span><span class="constant">‘c=’</span><span class="operator">,</span><span class="variable">c:</span><span class="constant">6:4;</span><span class="constant">);</span><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">writeln</span> <span class="constant">(</span><span class="constant">‘s=’</span><span class="operator">,</span><span class="variable">c:</span><span class="constant">6:4;</span><span class="constant">);</span><br>
+            <span class="keyword">end.</span>
+        </div>        
+        <h4>Результат работы усовершенствованной программы:</h4>
+        <div class="output">
+            <div class="result-header">Вычисление длины окружности и площади круга</div>
+            <div class="input-prompt">Введите r&gt;&gt; 8.5</div>
+            <div class="calculation-results">
+                <div class="keyword">c</div><div class="operator">=</div><div class="constant">53.3800</div><br>
+                <div class="keyword">s</div><div class="operator">=</div><div class="constant">226.8650</div>
+            </div>
+        </div>
+        <p>Теперь наша программа может вычислить длину окружности и площадь круга для любого значения r. Иначе говоря, она решает не единичную задачу, а целый класс задач. Кроме того, в программе понятно и удобно организован ввод исходных данных и вывод получаемых результатов. Это обеспечивает дружественность пользовательского интерфейса.</p>
+</div>
+</body>
+</html>

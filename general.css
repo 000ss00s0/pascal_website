@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif; /* Устанавливает шрифт для всего документа */
+    background-color: #f0f0f0; /* Устанавливает цвет фона */
+    margin: 0; /* Убирает внешние отступы */
+    padding: 0; /* Убирает внутренние отступы */
+}
+
+.header {
+    background-color: #007bff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header button {
+    margin: 0 10px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.header button:hover {
+    transform: scale(1.1);
+}
+
+/* Общие стили для контейнера */
+.container {
+    max-width: 980px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирует контейнер по горизонтали */
+    text-align: center; /* Выравнивает текст по центру */
+    background-color: #fff; /* Цвет фона контейнера */
+    padding: 20px; /* Внутренний отступ контейнера */
+    border-radius: 10px; /* Скругление углов контейнера */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень контейнера */
+}
+
+/* Стили для заголовка */
+h1 {
+    background: linear-gradient(to right, #6eacee, #007bff); /* Градиент от синего к розовому */
+    -webkit-background-clip: text; /* Клип к тексту для Webkit (Chrome, Safari) */
+    background-clip: text; /* Клип к тексту */
+    color: transparent; /* Делаем текст прозрачным */
+}
+
+
+/* Стили для кнопок */
+/* button {
+    margin-top: 20px; /* Верхний отступ кнопки */
+    /* padding: 10px 20px; /* Внутренний отступ кнопки */
+    /* background-color: #007bff; Цвет фона кнопки */
+    /*color: #fff; /* Цвет текста кнопки */
+    /*border: none; /* Убирает границу кнопки */
+    /*cursor: pointer; /* Устанавливает курсор в виде указателя */
+    /*border-radius: 5px; /* Скругление углов кнопки */
+    /*transition: background-color 0.3s ease; /* Плавное изменение цвета фона кнопки при наведении */
+/*} */ 
+
+/* button:hover {
+    background-color: #0056b3; /* Новый цвет фона кнопки при наведении } */
+
+/* Стили для контента */
+#content {
+    margin-top: 30px; /* Верхний отступ контента */
+    text-align: left; /* Выравнивание текста контента по левому краю */
+}
+
+/* Стили для формы */
+form {
+    margin-top: 20px; /* Верхний отступ формы */
+    text-align: center; /* Выравнивание текста формы по центру */
+}
+
+/* Стили для полей ввода
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%; /* Ширина поля ввода */
+    /*padding: 10px; /* Внутренний отступ поля ввода */
+    /*margin-bottom: 10px; /* Нижний отступ поля ввода */
+    /*border: 1px solid #ccc; /* Граница поля ввода */
+    /*border-radius: 5px; /* Скругление углов поля ввода */
+    /*box-sizing: border-box; /* Устанавливает размеры поля ввода включая padding и border */
+/*}
+
+/* Стили для кнопки отправки формы */
+/*input[type="submit"] {
+   /* background-color: #28a745; /* Цвет фона кнопки отправки формы */
+/*}
+
+/*input[type="submit"]:hover {
+ /*   background-color: #218838; /* Новый цвет фона кнопки отправки формы при наведении */
+/*} */

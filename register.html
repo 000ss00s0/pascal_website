@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" type="text/css" href="register.css">
+</head>
+<body>
+    <div class="header">
+        <button onclick="window.location.href = 'general.php';">Главная</button>
+        <button onclick="window.location.href = 'courses.php';">Курсы</button>
+        <button onclick="window.location.href = 'tests.php';">Тесты</button>
+        <button onclick="window.location.href = 'personal_area.php';">Личный кабинет</button>  
+    </div>
+    <h2>Форма регистрации</h2>
+    <form action="register.php" method="post" onsubmit="return validateRegistrationForm()">
+        Имя пользователя: <input type="text" name="username"><br>
+        Email: <input type="email" name="email"><br>
+        Пароль: <input type="password" name="password"><br>
+        <p>Выберите вашу роль:</p>
+        <input type="radio" id="student" name="role" value="student">
+        <label for="student">Ученик</label><br>
+        <input type="radio" id="teacher" name="role" value="teacher">
+        <label for="teacher">Преподаватель</label><br>
+        <input type="submit" value="Зарегистрироваться">
+    </form>
+    <div id="errorMessage" class="error-message"></div>
+    <button onclick="navigateToLogin()">Уже есть аккаунт?</button>
+    <script>
+        function validateRegistrationForm() {
+            var username = document.getElementsByName('username')[0].value;
+            var email = document.getElementsByName('email')[0].value;
+            var password = document.getElementsByName('password')[0].value;
+            var role = document.querySelector('input[name="role"]:checked'); // Получаем выбранную роль
+
+            if (!username || !email || !password || !role) {
+                showError("Осторожно! Встреча с пустыми полями может вызвать серьезное чувство голода у наших баз данных. Не дайте им остаться голодными - заполните все поля и выберите роль!");
+                return false;
+            }
+            return true;
+        }
+
+        function showError(message) {
+            var errorMessage = document.getElementById('errorMessage');
+            errorMessage.textContent = message;
+            errorMessage.classList.add('show'); // Добавление класса для показа сообщения
+            setTimeout(function() {
+                errorMessage.classList.remove('show'); // Удаление класса после завершения анимации
+            }, 5000);
+        }
+
+        function navigateToLogin() {
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>

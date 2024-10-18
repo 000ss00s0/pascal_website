@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестирование по теме одномерные массивы целых чисел</title>
+    <link rel="stylesheet" href="test4_style.css">
+</head>
+<body>
+    <div class="header">
+        <button onclick="window.location.href = 'general.php';">Главная</button>
+        <button onclick="window.location.href = 'courses.php';">Курсы</button>
+        <button onclick="window.location.href = 'tests.php';">Тесты</button>
+        <button onclick="window.location.href = 'personal_area.php';">Личный кабинет</button>  
+    </div>
+
+    <h1>Одномерные массивы целых чисел</h1>
+
+    <form id="quizForm" action="test4.php" method="post">
+        
+        <div class="question-menu" id="questionMenu"></div> <!-- Меню вопросов -->
+        <div class="question" style="display: block;">
+            <p>Вопрос 1: Перед использованием в программе массив должен быть описан. Что не входит в описание массива?</p>
+            <input type="radio" name="q1" value="1" id="q1a1" class="answer">
+            <label for="q1a1">Имя массива</label><br>
+            <input type="radio" name="q1" value="2" id="q1a2" class="answer">
+            <label for="q1a2">Количество элементов</label><br>
+            <input type="radio" name="q1" value="3" id="q1a3" class="answer">
+            <label for="q1a3">Тип элементов</label><br>
+            <input type="radio" name="q1" value="4" id="q1a4" class="answer" title="Тот самый Паскаль Фантазийный, который во сне получил от компьютерного эльфа книгу с инструкциями по созданию языка программирования.">
+            <label for="q1a4">Имена элементов</label><br>
+        </div>
+
+        <div class="question" style="display: none;">
+            <p>Вопрос 2: Перераспределение значений элементов массива в некотором определенном порядке, называется?</p>
+            <input type="radio" name="q2" value="1" id="q2a1" class="answer">
+            <label for="q2a1">Алгоритм</label><br>
+            <input type="radio" name="q2" value="2" id="q2a2" class="answer">
+            <label for="q2a2">Программа</label><br>
+            <input type="radio" name="q2" value="3" id="q2a3" class="answer">
+            <label for="q2a3">Сортировка</label><br>
+            <input type="radio" name="q2" value="4" id="q2a4" class="answer">
+            <label for="q2a4">Процедура</label><br>
+        </div>
+
+        <div class="question" style="display: none;">
+            <p>Вопрос 3: Порядок, при котором первый элемент в массиве имеет маленькое значение, а значение каждого следующего элемента не меньше значения предыдущего, называется?</p>
+            <input type="radio" name="q3" value="1" id="q3a1" class="answer">
+            <label for="q3a1">Не убывающим </label><br>
+            <input type="radio" name="q3" value="2" id="q3a2" class="answer">
+            <label for="q3a2">Не возрастающим</label><br>
+            <input type="radio" name="q3" value="3" id="q3a3" class="answer">
+            <label for="q3a3">Минимальным</label><br>
+            <input type="radio" name="q3" value="4" id="q3a4" class="answer">
+            <label for="q3a4">Максимальным</label><br>
+        </div>
+
+        <div class="question" style="display: none;">
+            <p>Вопрос 4: Порядок, при котором первый элемент в массиве имеет самое большое значение, а значение каждого следующего элемента не больше значения предыдущего, называется?</p>
+            <input type="radio" name="q4" value="1" id="q4a1" class="answer">
+            <label for="q4a1">Не убывающим </label><br>
+            <input type="radio" name="q4" value="2" id="q4a2" class="answer">
+            <label for="q4a2">Не возрастающим</label><br>
+            <input type="radio" name="q4" value="3" id="q4a3" class="answer">
+            <label for="q4a3">Минимальным</label><br>
+            <input type="radio" name="q4" value="4" id="q4a4" class="answer">
+            <label for="q4a4">Максимальным</label><br>
+        </div>
+
+        <div class="question" style="display: none;">
+            <p>Вопрос 5: Какая цель сортировки?</p>
+            <input type="radio" name="q5" value="1" id="q5a1" class="answer">
+            <label for="q5a1">Используется для создания хаоса в данных, чтобы они казались более интересными для анализа </label><br>
+            <input type="radio" name="q5" value="2" id="q5a2" class="answer">
+            <label for="q5a2">Увеличить сложность программы, чтобы она казалась более внушительной</label><br>
+            <input type="radio" name="q5" value="3" id="q5a3" class="answer">
+            <label for="q5a3">Облегчить последующий поиск элементов: искать нужный элемент в упорядоченном массиве легче </label><br>
+            <input type="radio" name="q5" value="4" id="q5a4" class="answer">
+            <label for="q5a4">Создать разнообразие в программе, чтобы она выглядела более креативной и оригинальной</label><br>
+        </div>
+
+        <button type="button" id="nextQuestionButton" class="nextQuestionButton" onclick="showNextQuestion()">Следующий вопрос</button>
+        <input type="submit" value="Завершить" id="checkAnswersButton" class="checkAnswersButton hidden">
+    </form>
+    
+    <script>
+        const questions = document.querySelectorAll('.question'); // Получаем все вопросы
+        const questionMenu = document.getElementById('questionMenu'); // Получаем меню вопросов
+        let currentQuestionIndex = 0; // Индекс текущего вопроса
+
+        questions.forEach((question, index) => {
+            // Создаем элемент списка для меню вопросов
+            const listItem = document.createElement('div');
+            listItem.classList.add('question-menu-item');
+            listItem.innerHTML = `<a href="#question${index + 1}" onclick="showQuestion(${index})" id="qMenu${index + 1}">Вопрос ${index + 1}</a>`;
+            questionMenu.appendChild(listItem);
+        });
+        function showQuestion(index) {
+            // Показываем кнопку "Следующий вопрос" или "Проверить ответы" в зависимости от индекса
+            if (index < questions.length - 1) {
+                console.log("Показываем кнопку 'Следующий вопрос'");
+                document.getElementById('nextQuestionButton').classList.remove('hidden');
+                document.getElementById('checkAnswersButton').classList.add('hidden');
+            } else {
+                console.log("Показываем кнопку 'Проверить ответы'");
+                document.getElementById('nextQuestionButton').classList.add('hidden');
+                document.getElementById('checkAnswersButton').classList.remove('hidden');
+            }
+
+            // Скрываем текущий вопрос и отображаем выбранный
+            questions[currentQuestionIndex].style.display = 'none';
+            currentQuestionIndex = index;
+            questions[currentQuestionIndex].style.display = 'block';
+        }
+
+        function showNextQuestion() {
+            const nextIndex = currentQuestionIndex + 1;
+            if (nextIndex < questions.length) {
+                showQuestion(nextIndex);
+            }
+        }
+
+        document.getElementById('quizForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const q1Answer = document.querySelector('input[name="q1"]:checked');
+            const q2Answer = document.querySelector('input[name="q2"]:checked');
+            const q3Answer = document.querySelector('input[name="q3"]:checked');
+            const q4Answer = document.querySelector('input[name="q4"]:checked');
+            const q5Answer = document.querySelector('input[name="q5"]:checked');
+
+            if (!q1Answer || !q2Answer || !q3Answer || !q4Answer || !q5Answer) {
+                alert('Вы не ответили на все вопросы');
+                return;
+            }
+
+            const answers = [
+                q1Answer.value,
+                q2Answer.value,
+                q3Answer.value,
+                q4Answer.value,
+                q5Answer.value
+            ];
+
+            const correctAnswers = ['4', '3', '1', '2', '3'];
+
+            let score = 0;
+            for (let i = 0; i < answers.length; i++) {
+                if (answers[i] === correctAnswers[i]) {
+                    score++;
+                } else {
+                    const selectedAnswer = document.querySelector(`input[name="q${i + 1}"][value="${answers[i]}"]`);
+                    if (selectedAnswer) {
+                        const labelForAnswer = document.querySelector(`label[for="${selectedAnswer.id}"]`);
+                        if (labelForAnswer) {
+                            labelForAnswer.style.color = 'red';
+                        }
+                    }
+                }
+            }
+
+            alert('Вы дали ' + score + ' правильных ответов из ' + answers.length);
+
+            const formData = new FormData(this);
+            fetch('test4.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json()) // Преобразуем ответ в JSON
+            .then(result => {
+                if (result.success) {
+                    alert(`Ваши баллы: ${result.score}`); // Выводим только количество баллов
+                } else {
+                    console.error('Ошибка:', result.error); // Обрабатываем ошибку
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка при отправке формы:', error);
+            });
+        });
+    </script>  
+</body>
+</html>
